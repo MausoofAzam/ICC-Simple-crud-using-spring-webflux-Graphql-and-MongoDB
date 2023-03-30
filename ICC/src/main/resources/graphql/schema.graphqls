@@ -1,0 +1,28 @@
+type Query{
+    getPlayerById(id : ID) : Player
+    getPlayerByName(name : String) : Player
+    getAllPlayer : [Player]
+    getPlayerByClub(club : String) :Player
+    getPlayerByNationality(nationality : String) : Player
+
+}
+type  Mutation {
+    addPlayer(playerInput : PlayerInput) : Player
+    updatePlayer(id : ID!,playerInput : PlayerInput): Player
+    deletePlayerById(id : ID) : Player
+    deletePlayerByName(name : String) : Player
+}
+
+type Player {
+    id : ID
+    name : String
+    age : Int
+    club : String
+    nationality : String
+}
+input PlayerInput{
+    name : String!
+    age : Int!
+    club : String!
+    nationality : String!
+}
